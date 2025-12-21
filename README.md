@@ -6,10 +6,11 @@ This repository contains the Terms of Use page for the Vector Viewer mobile appl
 
 - `index.html` - Main Terms of Use page
 - `.nojekyll` - Tells GitHub Pages to serve files as-is without Jekyll processing
+- `.github/workflows/deploy.yml` - GitHub Actions workflow for static deployment
 
 ## Deployment
 
-This site is configured for GitHub Pages and will work automatically when deployed to a GitHub repository.
+This site is configured for GitHub Pages with automatic deployment via GitHub Actions. The workflow deploys static files without using Jekyll processing.
 
 ### GitHub Pages URL
 
@@ -25,10 +26,17 @@ Use the GitHub Pages URL in App Store Connect for the Terms of Use link.
 1. Push this repository to GitHub
 2. Enable GitHub Pages in repository settings:
    - Go to Settings → Pages
-   - Select "Deploy from a branch"
-   - Choose the main branch and `/ (root)` folder
+   - Select "GitHub Actions" as the source
    - Save
-3. The site will be automatically deployed and available at the GitHub Pages URL
+3. The site will be automatically deployed when pushing to the main branch
+4. The deployment workflow will run automatically and deploy the static files
+
+### Workflow Features
+
+- **No Jekyll processing**: Uses `.nojekyll` file and custom workflow
+- **Static deployment**: Direct file serving without build process
+- **Automatic deployment**: Triggers on push to main branch
+- **Fast deployment**: No build steps required
 
 ## Features
 
